@@ -4,11 +4,10 @@
  * @param config - private student ability to perform for different focus modes
  * @returns number of weeks needed for finish education
  */
-module.exports = function getTimeForEducation(
-    focus = 'family', 
-    knowsProgramming = true,
-    config = {family: 4}
-    ) {
-      return 0;
-  };
+
+const getTimeForEducation = (preferences, knowsProgramming, config) =>{
+  return knowsProgramming? Math.ceil(800/config[preferences]) : Math.ceil(1300/config[preferences])
+}
+
+module.exports = getTimeForEducation
   
